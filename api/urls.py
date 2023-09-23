@@ -8,4 +8,8 @@ router.register(r'apuntes',views.apuntesViewSet)
 urlpatterns = [
     path('',include(router.urls)),
     path('docs/',include_docs_urls(title='Documentación de la API')), 
+    path('apuntes/<int:pk>/delete/',views.apuntesDelete.as_view()),
+    path('apuntes/<int:pk>/update/',views.apuntesUpdate.as_view()),
+    path('apuntes/create/',views.apuntesCreate.as_view()),
+    
 ]
